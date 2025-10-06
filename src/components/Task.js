@@ -1,4 +1,4 @@
-import DeleteIcon from "./images/icons8-delete.svg";
+import DeleteIcon from "../images/icons8-delete.svg";
 
 export function Task({ task, i, toggleTask, deleteTask, showEditField }) {
   return (
