@@ -1,6 +1,6 @@
 import DeleteIcon from "./images/icons8-delete.svg";
 
-export function Task({ task, i, toggleTask, deleteTask }) {
+export function Task({ task, i, toggleTask, deleteTask, showEditField }) {
   return (
     <div className="task">
       <div className="task-content">
@@ -12,6 +12,7 @@ export function Task({ task, i, toggleTask, deleteTask }) {
         </span>
         <span
           className="text"
+          onClick={() => showEditField(i)}
           style={task.status ? { textDecoration: "line-through" } : {}}>
           {task.content}
         </span>

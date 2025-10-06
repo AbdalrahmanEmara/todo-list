@@ -3,6 +3,7 @@ import { Task } from "./Task";
 
 export function TasksList() {
   const [tasks, setTasks] = useState([]);
+  const [taskEdited, setTaskEdited] = useState(null);
   function handleNewTask(e) {
     e.preventDefault();
     if (!e.target[0].value) return;
@@ -26,6 +27,24 @@ export function TasksList() {
     setTasks(tasks.filter((_, i) => index !== i));
   }
 
+  function showEditField(index) {
+    document.querySelector(".edit--field").classList.toggle('hidden');
+    document.querySelector('.overlay').classList.toggle('hidden');
+
+    setTaskEdited(t => index);
+  }
+
+  function submitEdit (e, index) {
+    e.preventDefault();
+    if(!e.target[0].value) return;
+    
+    
+    setTasks(tasks => tasks.map((t, i) => index === i ? {...t, content: e.target[0].value} : t));
+    
+    showEditField();
+    e.target[0].value = "";
+  }
+
   return (
     <>
       <form className="form" onSubmit={(e) => handleNewTask(e)}>
@@ -41,9 +60,18 @@ export function TasksList() {
               task={task}
               i={i}
               toggleTask={toggleTask}
-              deleteTask={deleteTask} />
+              deleteTask={deleteTask}
+              showEditField={showEditField} />
           );
         })}
+      </div>
+
+      <form className="edit--field hidden" onSubmit={(e) => submitEdit(e, taskEdited)}>
+        <p>Change task name</p>
+        <input type="text" />
+      </form> 
+      <div className="overlay hidden">
+        <button onClick={() => showEditField()}>X</button>
       </div>
     </>
   );
