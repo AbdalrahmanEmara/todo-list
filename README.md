@@ -59,3 +59,18 @@ npm install
 npm start
 
 ```
+
+---
+
+## 🌍 Deployment
+This project is deployed on Netlify:
+
+👉 <a href="https://todolist-emara.netlify.app/">Live Demo</a>
+
+---
+
+## 👤 Author
+#### Abdelrahman Emara
+💼 <a href="https://www.linkedin.com/in/emarah/">LinkedIn</a>
+
+
