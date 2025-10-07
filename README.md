@@ -3,6 +3,9 @@
 A simple and clean Todo List application built with **React** to practice state management concepts such as **lifting state up**, **state immutability**, and **component composition**.
 
 ---
+## 📸 Preview
+<img src="./src/images/Screenshot from 2025-10-07 00-00-07.png" width="450">
+---
 
 ## 🚀 Features
 
@@ -56,6 +59,3 @@ npm install
 npm start
 
 ```
----
-## 📸 Preview
-<img src="./src/images/Screenshot from 2025-10-07 00-00-07.png" width="450">
